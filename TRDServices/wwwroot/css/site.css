@@ -15,6 +15,7 @@
     padding-right: 50px;
     color: white;
     background-color: #1B3680;
+    border-bottom: 0;
 }
 
 .trdNav {
@@ -24,4 +25,16 @@
 
 .nav.navbar-nav.navbar-right li a {
     color: #5E576B;
+}
+
+.navbar-inverse {
+    border-bottom: 0;
+}
+
+.page-footer {
+    background-color: #F2C111;
+}
+
+.trdCopywrite {
+    color: #1B3680;
 }

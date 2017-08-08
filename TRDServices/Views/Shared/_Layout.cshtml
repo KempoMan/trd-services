@@ -8,28 +8,29 @@
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />        
-        <link rel="stylesheet" href="~/css/site.css" />        
-        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />        
+        <link rel="stylesheet" href="~/css/mdb.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/mdb.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />        
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
     </environment>
-    
-    
+
+
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body>
     <div class="row banner">
         <div class="col-xs-6">
-            <i class="fa fa-facebook"></i> 
-            <i class="fa fa-twitter"></i> 
-            <i class="fa fa-google-plus-official"></i> 
-            <i class="fa fa-linkedin"></i> 
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-google-plus-official"></i>
+            <i class="fa fa-linkedin"></i>
         </div>
         <div class="col-xs-6 text-right">
             <i class="fa fa-phone"></i> 1(951)905-5355
@@ -87,8 +88,8 @@
     </environment>
 
     @RenderSection("Scripts", required: false)
-<!--Footer-->
-    <footer class="page-footer blue center-on-small-only">
+    <!--Footer-->
+    <footer class="page-footer amber accent-3 center-on-small-only">
 
         <!--Footer Links-->
         <div class="container-fluid">
@@ -96,12 +97,18 @@
 
                 <!--First column-->
                 <div class="col-md-6">
-                    <h5 class="title">Footer Content</h5>
-                    <p>Here you can use rows and columns here to organize your footer content.</p>
+                    <span class="copyright trdCopywrite">
+                        <strong>
+                            Thousand Oaks Research and Development, Inc. (TRD)<br>
+                            3900 Market Street Suite 260<br>
+                            Riverside, CA 92501 <br><br>
+
+                        </strong>
+                    </span>
                 </div>
                 <!--/.First column-->
                 <!--Second column-->
-                <div class="col-md-6">
+                @*<div class="col-md-6">
                     <h5 class="title">Links</h5>
                     <ul>
                         <li><a href="#!">Link 1</a></li>
@@ -109,16 +116,15 @@
                         <li><a href="#!">Link 3</a></li>
                         <li><a href="#!">Link 4</a></li>
                     </ul>
-                </div>
+                </div>*@
                 <!--/.Second column-->
             </div>
         </div>
         <!--/.Footer Links-->
         <!--Copyright-->
         <div class="footer-copyright">
-            <div class="container-fluid">
-                © 2015 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
-
+            <div class="container-fluid trdCopywrite">
+                © 2012-2017 TRD - All Rights Reserved.
             </div>
         </div>
         <!--/.Copyright-->
