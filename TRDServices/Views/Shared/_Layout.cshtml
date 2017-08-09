@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TRD Services | TRD Inc.</title>
+    <title>@ViewData["Title"] - TRD ServicesAdministrative | TRD Inc.</title>
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -27,17 +27,20 @@
 <body>
     <div class="row banner">
         <div class="col-xs-6">
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-google-plus-official"></i>
-            <i class="fa fa-linkedin"></i>
+            <a class="trdSocialMediaIcon" href="https://www.facebook.com/Thousand-Oaks-Research-Development-331585923566771/" target="_blank"><i class="fa fa-facebook"></i></a>             
+            &nbsp;
+            <a class="trdSocialMediaIcon" href="https://twitter.com/TO_RD" target="_blank"><i class="fa fa-twitter"></i></a> 
+            &nbsp;
+            <i class="fa fa-google-plus-official"></i> 
+            &nbsp;
+            <i class="fa fa-linkedin"></i> 
         </div>
         <div class="col-xs-6 text-right">
             <i class="fa fa-phone"></i> 1(951)905-5355
             <i class="fa fa-envelope"></i> info@trd-services.com
         </div>
     </div>
-    <nav class="navbar navbar-inverse navbar-fixed-top trdNav">
+    <nav class="navbar navbar-inverse navbar-static-top trdNav">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -46,27 +49,88 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @*<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">TRDServices</a>*@
-                <img src="~/images/trd/logo.png" height="90" />
+                <img src="~/images/trd/logo.png" height="90" alt="TRD Logo"/>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">test</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="dropdown @(ViewContext.RouteData.Values["Action"].ToString().Contains("Services") ? "active" : "")">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="ServicesAdministrative">Administrative</a>
+                            </li>                            
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="ServicesRecruitment">Recruitment</a>
+                            </li>                            
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="ServicesTaxPrep">Tax Preparation</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Contracts"  ? "active" : "")">
+                        <a asp-area="" asp-controller="Home" asp-action="Contracts">Contracts</a>
+                    </li>
+                    <li class="dropdown @(ViewContext.RouteData.Values["Action"].ToString().Contains("About") ? "active" : "")">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="AboutContact">Contact TRD</a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="AboutTerms">Terms Of Use</a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="AboutPrivacy">Privacy Policy</a>
+                            </li>
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p class="test">&copy; 2017 - TRDServices</p>
-        </footer>
+        @RenderBody()                
     </div>
+    
+    <!--Footer-->
+    <footer class="page-footer amber accent-3 center-on-small-only">
 
-    <environment names="Development">
+        <!--Footer Links-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3"></div>                
+                <!--First column-->
+                <div class="col-xs-6 text-center">
+                    <span class="copyright trdCopywrite">
+                        <strong>
+                            Thousand Oaks Research and Development, Inc. (TRD)<br>
+                            3900 Market Street Suite 260<br>
+                            Riverside, CA 92501 <br><br>
+
+                        </strong>
+                    </span>
+                </div>
+                <div class="col-xs-3"></div>                
+            </div>
+        </div>
+        <!--/.Footer Links-->
+        <!--Copyright-->
+        <div class="footer-copyright">
+            <div class="container-fluid trdCopywrite">
+                © 2012-2017 TRD - All Rights Reserved.
+            </div>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->    
+
+<environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
@@ -85,51 +149,8 @@
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
+    </environment>       
 
-    @RenderSection("Scripts", required: false)
-    <!--Footer-->
-    <footer class="page-footer amber accent-3 center-on-small-only">
-
-        <!--Footer Links-->
-        <div class="container-fluid">
-            <div class="row">
-
-                <!--First column-->
-                <div class="col-md-6">
-                    <span class="copyright trdCopywrite">
-                        <strong>
-                            Thousand Oaks Research and Development, Inc. (TRD)<br>
-                            3900 Market Street Suite 260<br>
-                            Riverside, CA 92501 <br><br>
-
-                        </strong>
-                    </span>
-                </div>
-                <!--/.First column-->
-                <!--Second column-->
-                @*<div class="col-md-6">
-                    <h5 class="title">Links</h5>
-                    <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
-                    </ul>
-                </div>*@
-                <!--/.Second column-->
-            </div>
-        </div>
-        <!--/.Footer Links-->
-        <!--Copyright-->
-        <div class="footer-copyright">
-            <div class="container-fluid trdCopywrite">
-                © 2012-2017 TRD - All Rights Reserved.
-            </div>
-        </div>
-        <!--/.Copyright-->
-
-    </footer>
-    <!--/.Footer-->
+@RenderSection("Scripts", required: false)
 </body>
 </html>

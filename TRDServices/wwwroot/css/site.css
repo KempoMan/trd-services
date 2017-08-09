@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 120px;
+    /*padding-top: 25px;*/
     background-color: #ffffff;
 }
 
@@ -15,7 +15,7 @@
     padding-right: 50px;
     color: white;
     background-color: #1B3680;
-    border-bottom: 0;
+    border: 0;
 }
 
 .trdNav {
@@ -37,4 +37,114 @@
 
 .trdCopywrite {
     color: #1B3680;
+}
+
+.trdBlue {
+    color: #1B3680;
+}
+
+.trdBlueBg {
+    background-color: #1B3680;
+}
+
+.trdWhiteText {
+    color: white;   
+}
+
+.trdBold {
+    font-weight: bold;
+}
+
+.trdGreen {
+    color: #449B22;
+}
+
+.trdParagraphStart {
+    font-weight: bold;
+}
+
+.navbar .dropdown-menu {
+    background-color: #C9E0F5;
+}
+
+.navbar .dropdown-menu a:hover {
+    background-color: #449B22 !important;
+    color: white;
+    font-weight: bold;
+}
+
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #449B22;
+}
+
+.navbar-nav > li > a {
+    font-weight: bold;
+    color: #A4B3A5;
+}
+
+.navbar .dropdown-menu a {
+    font-size: small;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #449B22;
+    font-weight: bold;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #57577A;
+}
+
+
+
+.panel-group .panel {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #EEEEEE;
+}
+
+.panel-default > .panel-heading {
+    padding: 0;
+    border-radius: 0;
+    color: #212121;
+    background-color: #FAFAFA;
+    border-color: #EEEEEE;
+}
+
+.panel-title {
+    font-size: 14px;
+}
+
+.panel-title > a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.more-less {
+    float: right;
+    color: #212121;
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #EEEEEE;
+}
+
+.contractTable {
+    font-size: 12px;
+}
+
+.btn-default {
+    background-color: #449B22;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active {
+    background-color: #00C851 !important;
+}
+
+a.trdSocialMediaIcon {
+    text-decoration: none;
+    color: white !important;
 }
